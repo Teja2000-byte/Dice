@@ -1,32 +1,24 @@
-# Inventory Import Review - idea approved, input preparation pending
+# Inventory Import Review - recording files
 
-The user has confirmed that the idea was approved. These materials use the submitted Goal and apps unchanged. Compare with the actual Studio approval; if a reviewer changed either, send the revised text before recording.
+The user confirmed the idea was approved and explicitly requested Codex to generate the two inputs. The exact approved Goal text is unchanged. Read SOURCE_PROVENANCE.txt off screen: these files are Codex-generated, not Gemini-generated; the original submitted proposal retains its original starting-materials wording.
 
-## Ready now
+## Download the current package
 
-- Goal.docx: one paragraph containing only the Goal, ready to import into the opening Google Docs document in Firefox.
-- Goal.txt: the same exact paragraph for copying.
-- TaskRecorder_Fields_APPROVED.txt: Goal, app list and setup notes; copy only the Goal into Task Description.
-- Studio_Proposal_APPROVED.txt: the submitted proposal, recorded as approved following user confirmation.
-- InventoryImportReview_Preparation_Only.zip: the Goal, fields and input-preparation brief. This is not the final recorder transfer ZIP.
+InventoryImportReview_Recording_Kit.zip contains two separate folders:
 
-## Required before the final recording ZIP
+- StockReview_Record: input 1.html, input 2.md and Goal.docx. This is the folder to open in Visual Studio Code on the recording user.
+- Offscreen_Guide: the final color-block PDF and Markdown script, exact source-line map, TaskRecorder fields, source-provenance note and validation notes. Keep all of these off the recorded screen.
 
-1. Use Input_Preparation_Gemini.txt in Gemini before recording to create the actual input 1.html and input 2.md. The uploaded guidelines say only Gemini is permitted for AI-prepared inputs, and the submitted proposal specifies Gemini-prepared starting materials. The documents written here are planning material; do not mislabel them as Gemini outputs.
-2. Upload both actual files here or put them in this task folder. Preserve them unchanged.
-3. We will verify the intended incomplete baseline, actual DOM/function names, test inputs and outcomes. We will use their exact physical line numbers, simulate the recorded edits and update later line numbers as source shifts.
-4. We will regenerate and inspect the final color-block PDF, with no unresolved line fields, then build InventoryImportReview_Recorder_Transfer.zip from the actual inputs and Goal document. No completed HTML or final metadata belongs in that transfer.
-5. Only then transfer the recorder ZIP to the other macOS user, use a fresh neutral folder, and record the approved workflow.
+The smaller InventoryImportReview_Recorder_Transfer.zip contains only StockReview_Record and its three files. The older Preparation_Only ZIP and DRAFT documents are historical; use the FINAL script with these generated inputs.
 
-## Recording guides and standards
+## On the Mac before recording
 
-Recording_Script_ColorBlocks_DRAFT.md and .pdf remain drafts because the actual inputs are missing. Location_And_Line_Map_DRAFT.md lists mandatory current-line fields. Input_Preparation_Gemini.txt specifies the intended source scaffolding and UI layout. Acceptance_Matrix_DRAFT.md specifies the twelve test groups. The draft proposal and fields are retained as history; use the APPROVED fields above for the approved Goal.
+1. Download and unzip the recording kit. Move StockReview_Record into a neutral shared location such as /Users/Shared/StockReview_Record so the other macOS user can read it. Preserve the original inputs. Rehearse only on a separate disposable copy; leave the real recording folder with no final output.
+2. Read Recording_Script_ColorBlocks_FINAL.pdf off screen. The starter has 105 physical lines, the brief has 140, and all source-line references are filled. Keep VS Code source formatting fixed; extra inserted lines or format-on-save can move later numbers. If the live file differs, read the actual gutter line and anchor before editing.
+3. Open StockReview_Record in VS Code. Before the take, open Goal.docx in Google Docs in Firefox and show only the exact approved Goal. TaskRecorder fields are in the offscreen folder. Native Firefox file opening must be checked on the Mac; cloud validation used Chromium over loopback HTTP.
+4. Prepare clear microphone audio, a quiet room, hidden bookmarks/account details, a tidy visible side Dock and required recording/accessibility apps. Rehearse the under-20-second intro and 3-4 minute epilogue, with the epilogue never over four minutes. The full writer range is 15:00-50:59; do not pad the task. Coding typing stays within 30%, with no continuous typing/mouse inactivity over 45 seconds outside the epilogue.
+5. During recording, Save As final output 1.html, show the intended incomplete baseline, implement the numbered edits and run all twelve acceptance groups in Firefox. Say what, where and why; name click type, exact control, relative location and observed result. Explain actual mistakes and retest them. No completed output is included in either package.
 
-Follow ../Narration_Standard.md and ../Reviewer_Feedback_Checklist.md: clear synchronized what/where/why narration, precise current code lines, named controls and relative positions, explicit click types, explained errors, quiet microphone setup, hidden bookmarks, tidy side Dock, and a rehearsed 3-4 minute epilogue (maximum four).
+## After recording
 
-## After the actual recording
-
-1. Keep the original matching TaskRecorder ZIP and video untouched. Verify video beginning/middle/end, sound, screenshots and the matching attempt.
-2. Send the exact recorded final output 1.html and the actual app-visit sequence (or recording evidence). Metadata.rtf must describe that recording and use the exact approved Goal. Do not manufacture a final topology from the planning guide.
-3. We will create Deliverables.zip from the two unchanged actual inputs, the exact recorded final output and any real intermediate artifacts. Metadata.rtf is uploaded separately.
-4. Upload the matching artifacts in the same approved Studio task, run both AutoQCs, and complete the verified checklist. Never mix rehearsal files or attempts.
+Keep the matching original TaskRecorder ZIP and video untouched. Check video/audio and the matching capture archive. Send the exact saved final output 1.html plus actual app-visit order or recording evidence. We will prepare Metadata.rtf from the actual recording, and Deliverables.zip from both unchanged inputs, the exact recorded output and any actual intermediate artifacts. Metadata.rtf stays outside Deliverables.zip. Do not mix rehearsal files or recording attempts. Run both Studio AutoQCs and complete only verified checklist items.

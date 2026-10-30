@@ -1,4 +1,4 @@
-User confirmed the proposed idea was approved. These fields use the submitted Goal and apps unchanged; compare them with the actual Studio approval before recording. If Studio changed any wording or apps, supply that revision before finalizing the recording guide.
+User confirmed the proposed idea was approved. Compare this Goal and app list with the actual Studio approval before recording; if Studio changed either, synchronize the materials first.
 
 Task Description - paste only this paragraph:
 Build the missing business validation for a synthetic, offline inventory-import review tool. In Visual Studio Code, preserve a starter HTML page and requirements brief, normalize item IDs, reject missing values, duplicate IDs and invalid quantities, and clear stale preview rows before each review. Keep the entire batch out of the preview if any row fails, and retain the starter's safe text rendering and local-review-only wording. In Firefox, demonstrate the incomplete baseline, then verify the completed page against twelve acceptance groups, including recovery after an error and literal display of markup-like text. Deliver one standalone HTML file with no network or storage calls.
@@ -8,10 +8,15 @@ Visual Studio Code
 Firefox
 
 Opening document:
-Open Goal.docx in Google Docs in Firefox before recording. Confirm that only the exact approved Goal is visible and hide account information. This is opening-only use; Google Docs is not an additional substantive task app. Keep setup instructions and this fields file off the recorded screen.
+Before recording, open Goal.docx in Google Docs in Firefox and show only the exact Goal paragraph. Hide private account/profile information. Google Docs is opening-only and is not an extra substantive task app.
 
-Recording inputs are still pending:
+Recording inputs:
 input 1.html
 input 2.md
+Both are in the recorder-transfer ZIP. Preserve them unchanged. Use Save As to create final output 1.html during recording.
 
-Do not start the recording from the draft guide: its line-number fields must first be completed against those actual files.
+Guide:
+Use Recording_Script_ColorBlocks_FINAL.pdf off screen. Numeric source lines are verified against the bundled files and staged edits; avoid unplanned source formatting. All expected results must be observed in the actual take.
+
+Input provenance:
+The two inputs were generated in Codex at the user's request, not Gemini. Read SOURCE_PROVENANCE.txt off screen and keep the provenance statement accurate.
