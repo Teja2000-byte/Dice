@@ -1,0 +1,13 @@
+Domain / Role: Front-end developer repairing a small packing planner.
+
+Goal: Repair a synthetic offline parcel-box planner so it calculates full boxes, a partial-box remainder, the total boxes needed, total capacity and unused slots correctly. In Visual Studio Code, preserve the starter and requirements brief, save a separate HTML output and repair four short arithmetic statements while keeping native browser validation. In Firefox, demonstrate two incorrect baseline results and complete seven acceptance groups covering partial boxes, exact fits, small and large orders, invalid inputs and recovery. Deliver one standalone local HTML file; no shipment is booked and no data is saved.
+
+Starting materials: Two synthetic files prepared before recording. input 1.html is a standalone local HTML page with two labeled numeric fields, native browser validation, a five-row result table and inline JavaScript. Four short statements produce incorrect partial-box counts, box counts, capacity and empty space. input 2.md defines the packing policy and seven acceptance groups. No external assets, private data, network access or storage is used. Preserve both inputs and create the completed HTML during the recording.
+
+Steps (with apps for each):
+1. In Visual Studio Code, read the brief, inspect calculatePacking, and use Save As to create final output 1.html.
+2. In Firefox, demonstrate the incorrect partial-box and exact-fit baseline results.
+3. In Visual Studio Code, repair four single-line arithmetic statements: use a remainder for partial items, round the required box count up, multiply for total capacity, and subtract packed items from that capacity.
+4. In Firefox, complete P01-P06 for partial boxes, exact fits, small orders, unit capacity, oversized boxes and a large order. Complete all three native-validation checks and the valid recovery in P07. Return to Visual Studio Code to inspect the saved output.
+
+Deliverable: final output 1.html, one standalone HTML packing planner with correct whole-number counts and preserved native field validation. The two starting files remain unchanged. This is a synthetic plan only; no shipment is booked and no data is saved.

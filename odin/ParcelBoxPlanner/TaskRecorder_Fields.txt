@@ -1,0 +1,10 @@
+OFFSCREEN - use only after this new idea is approved in Studio.
+
+Task Description - copy only the following paragraph if the approved Goal is unchanged:
+Repair a synthetic offline parcel-box planner so it calculates full boxes, a partial-box remainder, the total boxes needed, total capacity and unused slots correctly. In Visual Studio Code, preserve the starter and requirements brief, save a separate HTML output and repair four short arithmetic statements while keeping native browser validation. In Firefox, demonstrate two incorrect baseline results and complete seven acceptance groups covering partial boxes, exact fits, small and large orders, invalid inputs and recovery. Deliver one standalone local HTML file; no shipment is booked and no data is saved.
+
+Used Apps:
+Visual Studio Code
+Firefox
+
+Open Goal.pdf in Firefox as the Goal-only opening document. Keep this fields file and the guides off screen. If Studio changes the Goal or apps, synchronize the Goal PDF, fields, script and eventual metadata before recording.

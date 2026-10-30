@@ -4,7 +4,7 @@ User requirement: every instruction should be clear to a first-time listener. Us
 
 ## Current task-planning preference
 
-Prepare manageable tasks for about 20-25 minutes including the required closing reflection. Prefer a small number of stable, single-line code edits and a short complete test matrix. Verify timing by rehearsal; do not extend the script with repetitive pointing or shorten it by skipping required checks.
+Follow the duration requested for each task, including the required closing reflection. The latest request is for about 30 minutes; the previous Invoice Estimate task targeted 20-25 minutes. Prefer a small number of stable, single-line code edits and a short complete test matrix. Verify timing by rehearsal; do not extend the script with repetitive pointing or shorten it by skipping required checks.
 
 Every SAY block contains only complete literal sentences the user can read aloud unchanged. Put actions, checks, conditions, alternative-path selection and troubleshooting directions outside SAY. Include no placeholders or instructions to improvise inside SAY. Gate any success statement with an external CHECK; the speaker must not read it after a failed result. A broad requirements overview can be natural prose, while code edits still require the exact current file and line.
 
@@ -31,6 +31,8 @@ If an error appears, identify the observed message or behavior, app/file/control
 Record a short microphone check and listen back at normal speed. Use a quiet room, close room windows where practical, reduce fan/traffic/voice noise without disabling required equipment, and use a headset microphone if available. Recheck if the environment or microphone changes before the take. Do not edit noise out of a recorded submission.
 
 Hide the browser bookmarks toolbar and check tabs, history suggestions and account/profile controls for project references or personal data. Quit unused apps and unpin unused Dock shortcuts before the take; keep TaskRecorder and Accessibility Inspector running and preserve required background/security services. Check the whole screen at the actual recording resolution, including the side Dock and menu bar.
+
+Prepare ordinary VS Code and Firefox windows side by side before starting, and retain that arrangement during task work. Avoid overlap by construction; do not rely on minimizing an obscuring window just before a time limit. Do not use macOS full-screen Split View.
 
 ## Epilogue and submission
 

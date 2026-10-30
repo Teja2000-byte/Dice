@@ -1,0 +1,3 @@
+OFFSCREEN ADMINISTRATIVE NOTE
+
+The two synthetic task inputs and planning files were generated in Codex at the user's request. They are not Gemini outputs or independently self-authored files. The supplied project guidelines specify Gemini for AI-prepared inputs; this pack follows the user's explicit request for Codex-created materials. Keep any Studio source statement accurate. Where the source statement for AI inputs is requested, use "AI-generated before recording". Keep this note, the guide, GitHub, Studio and AI tools off the recorded screen.

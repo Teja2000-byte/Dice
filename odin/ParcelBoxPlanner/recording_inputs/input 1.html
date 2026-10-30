@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parcel Box Planner</title>
+<style>
+* { box-sizing: border-box; }
+body { max-width: 640px; margin: 18px auto; padding: 0 18px; font: 16px/1.45 system-ui,sans-serif; color: #183047; background: #f5f8fc; }
+h1 { font-size: 25px; margin: 0 0 8px; }
+p { margin: 8px 0 14px; }
+label { display: block; margin-top: 10px; font-weight: 650; }
+input { display: block; width: 100%; min-height: 36px; font: inherit; padding: 5px 8px; }
+button { margin: 14px 0; min-height: 38px; padding: 7px 16px; font: inherit; background: #165e96; color: white; border: 0; border-radius: 4px; cursor: pointer; }
+table { width: 100%; border-collapse: collapse; background: white; }
+caption { text-align: left; font-weight: 650; margin-bottom: 6px; }
+th,td { padding: 7px 10px; border: 1px solid #bbc9d7; text-align: left; }
+th { font-weight: 550; }
+td { width: 28%; font-variant-numeric: tabular-nums; }
+.note, #status { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+<h1>Parcel Box Planner</h1>
+<p class="note">Synthetic local plan only. No shipment is booked and no data is saved. Results show the last successful calculation.</p>
+<form id="packingForm">
+<label for="items">Items to pack</label>
+<input id="items" type="number" min="1" max="10000" step="1" value="23" required>
+<label for="capacity">Items per box</label>
+<input id="capacity" type="number" min="1" max="500" step="1" value="6" required>
+<button type="submit">Calculate boxes</button>
+</form>
+<table>
+<caption>Last calculated packing plan</caption>
+<tbody>
+<tr><th scope="row">Full boxes</th><td id="fullBoxes">--</td></tr>
+<tr><th scope="row">Items in partial box</th><td id="partialItems">--</td></tr>
+<tr><th scope="row">Boxes needed</th><td id="boxesNeeded">--</td></tr>
+<tr><th scope="row">Total slots</th><td id="totalSlots">--</td></tr>
+<tr><th scope="row">Unused slots</th><td id="unusedSlots">--</td></tr>
+</tbody>
+</table>
+<p id="status" role="status">Enter the quantities, then calculate a packing plan.</p>
+</main>
+<script>
+function calculatePacking(event) {
+  event.preventDefault();
+  const itemCount = Number(document.getElementById('items').value);
+  const boxSize = Number(document.getElementById('capacity').value);
+  const fullBoxes = Math.floor(itemCount / boxSize);
+  const partialItems = itemCount - fullBoxes;
+  const boxesNeeded = Math.floor(itemCount / boxSize);
+  const totalSlots = boxesNeeded + boxSize;
+  const unusedSlots = itemCount - totalSlots;
+  document.getElementById('fullBoxes').textContent = String(fullBoxes);
+  document.getElementById('partialItems').textContent = String(partialItems);
+  document.getElementById('boxesNeeded').textContent = String(boxesNeeded);
+  document.getElementById('totalSlots').textContent = String(totalSlots);
+  document.getElementById('unusedSlots').textContent = String(unusedSlots);
+  document.getElementById('status').textContent = 'Plan only; no shipment or saved record was created.';
+}
+document.getElementById('packingForm').addEventListener('submit', calculatePacking);
+</script>
+</body>
+</html>

@@ -14,6 +14,7 @@ This checklist summarizes actionable lessons supplied by the user. It contains n
 | Noise | Quiet room, room windows closed where practical, minimal traffic/voices/fan noise and headset microphone if available. Check a sample recording rather than assuming the microphone is clear. |
 | Bookmarks and accounts | Hide the bookmarks toolbar before recording and inspect tabs/profile/autofill areas for project references and personal data. |
 | Dock | Quit and unpin unused apps before the take. Keep required recording/accessibility apps and required background/security services running. |
+| Window overlap | Prepare ordinary task windows side by side without covering each other and retain that arrangement. Do not maximize Firefox over the editor or use macOS full-screen Split View. |
 | Epilogue | Rehearse 3-4 minutes, maximum four, covering outcome, verification, decisions, actual challenges, quality, limitations and improvements. A one-minute closing is not the planning target. |
 | Resubmission | Review the new continuous recording and matching artifacts, run both AutoQC checks and apply the workflow checklist. Never edit the recording to remove a problem. |
 
