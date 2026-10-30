@@ -7,7 +7,7 @@ Status: DRAFT IDEA. No Studio approval, recording, final deliverable or final su
 1. Open Studio_Proposal_DRAFT.txt and submit its five-heading proposal in your Studio task. This is a new task; use its own approval and follow that task after approval.
 2. Share the actual approval text and any reviewer changes. The Goal and apps must be synchronized before recording; do not treat this draft as approved.
 3. Prepare the two actual input files through the permitted process described in Input_Preparation_Gemini.txt. The guidelines specify Gemini for AI-prepared recording inputs. These planning documents were made in Codex and must not be relabeled as Gemini inputs.
-4. Send back the actual input 1.html and input 2.md. We will verify their baseline, selectors, messages, line locations and tests, then finalize the scene-by-scene guide. Its semantic scroll targets are already specified; actual line numbers will be added only from the real files.
+4. Send back the actual input 1.html and input 2.md. We will verify their baseline, selectors, messages, line locations and tests, then finalize the scene-by-scene guide. Every code cue must include the actual current line number, exact file and nearby code. The draft now contains explicit mandatory line fields; complete Location_And_Line_Map_DRAFT.md from the actual inputs and staged output before recording. Browser cues must name relative positions such as directly below the Inventory rows text area.
 5. Record only after the approved Goal, approved app list, actual inputs and final guide agree.
 
 ## Files
@@ -18,6 +18,8 @@ Status: DRAFT IDEA. No Studio approval, recording, final deliverable or final su
 - Acceptance_Matrix_DRAFT.md: design rules and twelve acceptance groups.
 - Input_Preparation_Gemini.txt: self-contained offscreen input-authoring brief.
 - Recording_Script_ColorBlocks_DRAFT.md / .pdf: detailed provisional SAY, ACTION, EDIT, CHECK and IF WRONG guide. Keep it off the recorded screen.
+- Location_And_Line_Map_DRAFT.md: required source-state line worksheet and physical UI-location checks. Unresolved line fields block recording readiness.
+- ../Reviewer_Feedback_Checklist.md: reusable checks for clear speech, field locations, click types, explained corrections, noise, bookmarks, Dock and epilogue.
 - Validation_Notes.md: what was exercised locally and what remains unverified.
 
 ## Timing and recording
