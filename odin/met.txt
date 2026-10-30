@@ -1,0 +1,17 @@
+Topology
+Firefox - LOOKUP
+Visual Studio Code - CREATE
+Firefox - LOOKUP
+Visual Studio Code - MODIFY
+Firefox - LOOKUP
+Visual Studio Code - LOOKUP
+
+Request
+Build the working behavior for a synthetic offline facility-opening checklist from a requirements brief and a visual HTML starter. In Visual Studio Code, preserve the original files, determine how current checkbox state should drive both the status text and progress bar, implement updates for all four items and a complete reset, and save a separate final HTML file. In Firefox, demonstrate the starter's incomplete behavior, then verify the completed page against eight state transitions and keyboard input. Deliver one standalone HTML file with no network or stored data.
+
+Task Description
+1. In Visual Studio Code, read input 2.md and inspect the visual starter input 1.html and its empty script block. Identify the controls and required state behavior, then use Save As to create final output 1.html while preserving both inputs unchanged.
+2. In Firefox, open the unmodified working copy to establish the incomplete baseline: checking Access doors does not update the status text or progress bar, and Reset Checklist does not clear the checked item.
+3. In Visual Studio Code, implement one update function that counts the currently checked boxes and updates both the status text and native progress bar. Attach change listeners to all four checkboxes, implement Reset to clear every box and refresh both displays, initialize the display from current state, and save final output 1.html.
+4. In Firefox, reload the completed page and reset to a clean start. Follow all eight acceptance steps in input 2.md, checking the status text, progress bar, and checkmarks together, including decreasing progress, completion, reset, and reuse after reset. Use Tab and Space to verify keyboard toggling, then reset the checklist.
+5. Return to Visual Studio Code to inspect the exact saved final output 1.html and confirm that both inputs remain unchanged and the output is standalone, with no network or storage calls.
