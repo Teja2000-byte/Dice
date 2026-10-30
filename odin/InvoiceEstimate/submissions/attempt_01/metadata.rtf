@@ -1,0 +1,16 @@
+{\rtf1\ansi\ansicpg1252\deff0
+{\fonttbl{\f0\fswiss Helvetica;}}
+\viewkind4\uc1\pard\f0\fs24
+Topology: Firefox (LOOKUP) -> Visual Studio Code (CREATE) -> Firefox (LOOKUP) -> Visual Studio Code (MODIFY) -> Firefox (LOOKUP) -> Visual Studio Code (LOOKUP)\par
+\par
+Request\par
+Repair a synthetic offline invoice-estimate calculator so discounts, tax and the final total follow a written currency policy. In Visual Studio Code, preserve the starter and requirements brief, save a separate HTML output, apply the discount before tax, round tax to the nearest cent and calculate the total from the discounted amount plus tax. In Firefox, compare two incorrect baseline results with the repaired page, then complete six acceptance groups covering ordinary amounts, half-cent rounding, a full discount, zero rates and native field validation. Deliver one standalone local HTML file; no invoice is issued and no payment or record is created.\par
+\par
+Task Description\par
+1. In Firefox, briefly display the approved Goal. In Visual Studio Code, read input 2.md, inspect calculateEstimate in input 1.html, and use Save As to create final output 1.html while preserving both original inputs.\par
+2. In Firefox, open the unmodified output copy and demonstrate the two incorrect baseline results: a total of 120.00 for Subtotal 100.00, Discount 10 and Tax rate 10, and tax of 0.01 with a total of 0.04 for Subtotal 0.03, Discount 0 and Tax rate 50.\par
+3. In Visual Studio Code, repair lines 54-56 of final output 1.html. Subtract the rounded discount before tax, replace Math.floor with Math.round for tax, and calculate the total as taxable cents plus tax cents. Save the file.\par
+4. In Firefox, reload the saved output and complete E01-E05 from input 2.md. Verify all four monetary results for ordinary discount and tax, half-cent tax rounding, discount rounding before tax, a full discount and zero percentage rates.\par
+5. In Firefox, complete all three E06 validation checks: an empty Subtotal, Discount 101 and Tax rate -1. Confirm native browser validation blocks a new calculation and distinguish the retained previous results from a new estimate. Restore valid values and calculate again.\par
+6. Return to Visual Studio Code to inspect the saved formulas and confirm the original inputs remain separate. Complete the closing reflection and deliver the exact saved standalone final output 1.html, with no invoice, payment or stored record created.\par
+}

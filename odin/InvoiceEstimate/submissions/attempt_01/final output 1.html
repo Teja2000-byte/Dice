@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invoice Estimate</title>
+<style>
+* { box-sizing: border-box; }
+body { max-width: 660px; margin: 0 auto; padding: 24px; font: 16px/1.4 system-ui, sans-serif; color: #183047; background: #f5f7fa; }
+h1 { margin: 0 0 8px; font-size: 25px; }
+.note { color: #43566b; margin-bottom: 16px; }
+label { display: block; font-weight: 600; margin-top: 10px; }
+input { width: 100%; padding: 8px; margin-top: 4px; font: inherit; border: 1px solid #7b8a9b; border-radius: 4px; }
+button { display: block; margin-top: 14px; padding: 10px 16px; font: inherit; font-weight: 600; color: white; background: #175daa; border: 0; border-radius: 4px; cursor: pointer; }
+:focus-visible { outline: 3px solid #cf8b10; outline-offset: 2px; }
+table { width: 100%; margin-top: 16px; border-collapse: collapse; background: white; }
+caption { text-align: left; font-weight: 600; margin-bottom: 6px; }
+th, td { padding: 8px 10px; border: 1px solid #c5d0dc; }
+th { text-align: left; font-weight: 500; }
+td { text-align: right; font-variant-numeric: tabular-nums; }
+tfoot { font-weight: bold; background: #e5edf7; }
+#status { margin-top: 10px; }
+</style>
+</head>
+<body>
+<h1>Invoice Estimate</h1>
+<p class="note">Synthetic USD estimate only. No invoice, payment or stored record is created. Results apply to the last successful calculation.</p>
+<form id="estimateForm">
+<label for="subtotal">Subtotal (USD)</label>
+<input id="subtotal" type="number" min="0.01" max="9999.99" step="0.01" value="100.00" required>
+<label for="discount">Discount (%)</label>
+<input id="discount" type="number" min="0" max="100" step="1" value="10" required>
+<label for="tax">Tax rate (%)</label>
+<input id="tax" type="number" min="0" max="100" step="1" value="10" required>
+<button type="submit">Calculate estimate</button>
+</form>
+<table>
+<caption>Last calculated estimate (USD)</caption>
+<tbody>
+<tr><th scope="row">Discount amount</th><td id="discountAmount">--</td></tr>
+<tr><th scope="row">Taxable amount</th><td id="taxableAmount">--</td></tr>
+<tr><th scope="row">Tax</th><td id="taxAmount">--</td></tr>
+</tbody>
+<tfoot><tr><th scope="row">Estimated total</th><td id="totalAmount">--</td></tr></tfoot>
+</table>
+<p id="status" role="status">Enter the amounts, then calculate an estimate.</p>
+<script>
+function calculateEstimate(event) {
+  event.preventDefault();
+  const subtotalCents = Math.round(Number(document.getElementById('subtotal').value) * 100);
+  const discountRate = Number(document.getElementById('discount').value);
+  const taxRate = Number(document.getElementById('tax').value);
+  const discountCents = Math.round(subtotalCents * discountRate / 100);
+  const taxableCents = subtotalCents -discountCents;
+  const taxCents = Math.round(taxableCents * taxRate / 100);
+  const totalCents =  taxableCents +taxCents;
+  document.getElementById('discountAmount').textContent = (discountCents / 100).toFixed(2);
+  document.getElementById('taxableAmount').textContent = (taxableCents / 100).toFixed(2);
+  document.getElementById('taxAmount').textContent = (taxCents / 100).toFixed(2);
+  document.getElementById('totalAmount').textContent = (totalCents / 100).toFixed(2);
+  document.getElementById('status').textContent = 'Estimate only; no payment or record was created.';
+}
+document.getElementById('estimateForm').addEventListener('submit', calculateEstimate);
+</script>
+</body>
+</html>
