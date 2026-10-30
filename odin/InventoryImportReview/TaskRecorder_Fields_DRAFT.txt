@@ -1,0 +1,10 @@
+DRAFT - NOT STUDIO APPROVED. Use these only if the Goal and app list are approved unchanged. If approval changes either, synchronize all materials first.
+
+Task Description (proposed Goal only):
+Build the missing business validation for a synthetic, offline inventory-import review tool. In Visual Studio Code, preserve a starter HTML page and requirements brief, normalize item IDs, reject missing values, duplicate IDs and invalid quantities, and clear stale preview rows before each review. Keep the entire batch out of the preview if any row fails, and retain the starter's safe text rendering and local-review-only wording. In Firefox, demonstrate the incomplete baseline, then verify the completed page against twelve acceptance groups, including recovery after an error and literal display of markup-like text. Deliver one standalone HTML file with no network or storage calls.
+
+Used Apps:
+Visual Studio Code
+Firefox
+
+The Goal-only opening document must match the eventual approved Goal exactly. Use Google Docs in Firefox for that opening; it is not additional substantive task work. Do not use Notes or TextEdit as the opening document.

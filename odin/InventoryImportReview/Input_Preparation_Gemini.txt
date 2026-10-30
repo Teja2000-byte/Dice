@@ -1,0 +1,151 @@
+INPUT PREPARATION BRIEF - use in Gemini before recording, off screen
+
+These are planning instructions written in Codex, not recording input files. The supplied guidelines permit Gemini for AI-prepared inputs. Do not describe Codex-created files as Gemini-created. Ask Gemini to independently author the two synthetic files below from this specification, save its actual outputs, and send those exact files back for review. Do not use Gemini during recording. If you instead author the files yourself, report their actual provenance and still have the files checked against this design. Do not falsely disclose an AI-generated file as self-created.
+
+Create two files only: input 1.html and input 2.md. Do not create final output 1.html, a finished business validator, metadata, an Odin document or a recording script. Do not include personal data, brand names, AI branding, external assets, CDN libraries, network requests or browser storage.
+
+input 1.html - original synthetic visual starter
+- Build a small accessible inventory-import review page with inline CSS and inline JavaScript; it must work when opened directly as a local file in Firefox.
+- Use a compact, readable single-column layout, native controls and a table. Page title: Inventory Import Review. Clearly state: Synthetic local review only; no inventory is imported or saved. Results apply to the last review; review again after editing the input.
+- Include a labeled empty textarea with id source, a type=button button with id validateBtn and label Review import, a role=status paragraph with id status initially saying No review yet., an empty ul with id errors, and an empty tbody with id rows beneath table headers Item ID, Location, Quantity. Do not prefill example records or results.
+- Implement parseSource(text): remove an optional leading BOM; split CRLF/LF/lone CR; find the first nonblank header; trim its three pipe-delimited fields and require item_id|location|quantity exactly; ignore subsequent blank lines; split each nonblank data row by literal pipe; report wrong column counts with physical source line numbers and continue to other rows; trim each value. Return { records, errors }. Each record has number (physical line), id (trimmed original spelling), location (trimmed), rawQuantity (trimmed string), quantity (Number(rawQuantity)). If no data rows and no prior parse errors, return Enter at least one data row. Use the exact parser messages in the attached specification.
+- Include a named function validateBatch(records) whose only statement is return []; It intentionally performs no business validation or ID normalization. Do not add TODO markers, hints marking exact edits, hidden checks or a completed solution.
+- Implement renderRows(records) to create tr and td elements with document.createElement and assign cell values only with textContent. Display id, location and String(quantity). Append rows to tbody id rows. This helper intentionally does not clear old rows; the review handler will need to clear them.
+- Implement reviewImport(): clear errorsEl, parse the source, combine parseSource errors with validateBatch(records), report every error in a textContent li and a rejection status, and return on any error. Otherwise call renderRows, total numeric quantities, and show the exact local-review-only success status below. Deliberately do NOT clear rowsEl in this handler, so an earlier preview stays visible after a later failed review. Do not introduce any other deliberate bugs.
+- Register reviewImport on the Review import button's click event. Use global DOM references sourceEl, statusEl, errorsEl and rowsEl matching the element IDs above.
+- Success status: Validated N rows (T total units). Local review only; nothing imported.
+- Failure status: Rejected: N issue(s). No rows imported.
+- This starter should pass structural parsing and safe-text display, but wrongly accept missing fields, duplicate item IDs, invalid quantity strings and noncanonical ID display. An invalid header after a valid review should show an error while incorrectly retaining the old preview. These are the missing business and lifecycle behaviors to implement during recording.
+
+input 2.md - requirements brief
+Independently write a concise readable brief covering all requirements and the twelve acceptance groups below. Include exact input blocks and expected outcomes. Keep header handling, quantity grammar, duplicate rules, line numbering, atomic rejection, recovery and literal text display explicit. Do not include implementation code or precomputed completed source files.
+
+Use three pipe-separated fields per line. This is a bounded plain-text format, not general CSV: quoted delimiters and multiline fields are outside scope.
+- The first nonblank line must contain item_id|location|quantity, with optional surrounding whitespace on each header field; header names are case-sensitive.
+- Ignore blank lines. Accept LF, CRLF, lone CR and one optional leading UTF-8 BOM. Errors refer to physical source line numbers, including blank lines.
+- Require exactly three fields on every nonblank data line. Trim whitespace around all field values.
+- Require a nonempty item ID and location. Normalize IDs to uppercase before comparing them or rendering them. Duplicate IDs reject the entire batch, even when location or quantity differs.
+- Quantities must contain ASCII digits only and represent integers from 0 through 9999 inclusive. Blank, negative, fractional, exponent, nonnumeric and over-limit values are invalid. Zero and leading zeros are valid; display the parsed number.
+- At least one data row is required. Collect all field-level business issues on structurally valid rows. Continue checking other rows after a malformed row. Header failures need only a header error.
+- No row is previewed if any parse or business error exists. Clear old preview rows and old errors before each new review. A correction must allow a fresh successful review without accumulation.
+- The preview uses safe text nodes/textContent, so markup-like values display literally. Retain native labels, a live status region, table headers and a readable error list.
+- Success reports the row count, total units, and: Local review only; nothing imported. Failure reports the issue count and: No rows imported. Neither outcome means inventory was changed or stored.
+- The final page is self-contained and runs from a local file, without external assets, network requests, storage or real inventory actions.
+
+
+Use the acceptance inputs and expected results in Acceptance_Matrix_DRAFT.md as the design specification; include all twelve groups in your authored brief. Those groups are reproduced below so this prompt is self-contained.
+
+
+
+### I01 - Normalize a valid batch
+
+```text
+item_id|location|quantity
+ a101 | North store | 3
+B202|Loading bay|2
+```
+
+Expected: Two preview rows: A101 / North store / 3 and B202 / Loading bay / 2. Status: Validated 2 rows (5 total units). Local review only; nothing imported. No errors.
+
+### I02 - Zero and leading-zero quantities
+
+```text
+item_id|location|quantity
+A101|North store|0
+B202|Loading bay|003
+```
+
+Expected: Two rows, quantities 0 and 3; total 3. Zero is valid. Leading zeros normalize to numeric display.
+
+### I03 - Duplicate IDs after trimming and uppercasing
+
+```text
+item_id|location|quantity
+A101|North store|3
+ a101 |Loading bay|2
+```
+
+Expected: No preview rows. One error: Line 3: duplicate item ID A101.
+
+### I04 - Missing location and missing ID
+
+```text
+item_id|location|quantity
+A101||3
+|North store|2
+```
+
+Expected: No preview rows. Two errors: Line 2: location is required. / Line 3: item ID is required.
+
+### I05 - Blank, fractional, negative and exponent quantities
+
+```text
+item_id|location|quantity
+A101|North store|
+B202|Bay|1.5
+C303|Bay|-1
+D404|Bay|1e2
+```
+
+Expected: No preview rows. Four quantity errors on physical lines 2, 3, 4 and 5. Each says quantity must be an integer from 0 to 9999.
+
+### I06 - Wrong number of fields
+
+```text
+item_id|location|quantity
+A101|North|3|extra
+```
+
+Expected: No preview rows. One error: Line 2: expected 3 fields.
+
+### I07 - Wrong header
+
+```text
+id|location|quantity
+A101|North|3
+```
+
+Expected: No preview rows. One error: Use header: item_id|location|quantity.
+
+### I08 - Header without data rows
+
+```text
+item_id|location|quantity
+```
+
+Expected: No preview rows. One error: Enter at least one data row.
+
+### I09 - Markup-like location is literal text
+
+```text
+item_id|location|quantity
+A101|<b>Store</b>|2
+```
+
+Expected: One row, total 2; location displays the literal characters <b>Store</b>, rather than bold Store. No markup is executed.
+
+### I10 - Valid-invalid-valid recovery
+
+Expected: Run I01, then I03, then I01 again. Observe two rows / no rows with one duplicate error / exactly two rows with no errors. No old preview or error survives the next review.
+
+### I11 - Blank lines, trimmed header and line endings
+
+```text
+
+ item_id | location | quantity
+
+ a101 | North store | 3
+B202|Loading bay|2
+
+```
+
+Expected: Two normalized rows, total 5, with no error. Parser must also accept CRLF and an optional leading UTF-8 BOM. Verify those parser properties in source and in offscreen validation; do not claim a Firefox CRLF/BOM check unless the actual input preserves those characters.
+
+### I12 - Inclusive maximum and over-limit rejection
+
+```text
+item_id|location|quantity
+A101|North|9999
+```
+
+Expected: First, 9999 is accepted as one row and total 9999. Then replace 9999 with 10000 and review again: no preview, one quantity error on Line 2.

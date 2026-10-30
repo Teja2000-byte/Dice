@@ -4,6 +4,9 @@ Shared working folder for Odin tasks in the Dice repository.
 
 - `met.rtf`: Facility Opening Checklist metadata in Rich Text Format.
 - `met.txt`: the same metadata as plain text for easy reading on GitHub.
+- [InventoryImportReview](InventoryImportReview/README_FIRST.md): new task
+  proposal, input-preparation brief, acceptance matrix and detailed draft
+  recording guide. Submit the idea first; this task is not yet approved.
 
 The metadata uses the revised approved Facility Opening Checklist Goal. Its
 Topology follows the supplied recording guide; confirm it matches the actual
