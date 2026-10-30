@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inventory Import Review</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0 auto; padding: 24px; max-width: 800px; font: 16px/1.45 system-ui, sans-serif; color: #182b3a; background: #f5f7fa; }
+h1 { margin: 0 0 10px; font-size: 25px; }
+.note { margin: 0 0 16px; color: #42566a; }
+label { display: block; font-weight: 650; margin-bottom: 6px; }
+textarea { display: block; width: 100%; min-height: 156px; resize: vertical; padding: 10px; font: 15px/1.4 monospace; border: 1px solid #708398; border-radius: 5px; background: white; }
+button { display: block; margin-top: 10px; padding: 9px 16px; border: 0; border-radius: 5px; font: inherit; font-weight: 650; color: white; background: #175db0; cursor: pointer; }
+button:hover { background: #124b90; }
+button:focus-visible, textarea:focus-visible { outline: 3px solid #d68b00; outline-offset: 3px; }
+#status { margin: 12px 0 8px; font-weight: 650; }
+#errors { margin: 8px 0 12px; padding-left: 24px; color: #9b2323; }
+#errors:empty { display: none; }
+h2 { margin: 16px 0 8px; font-size: 20px; }
+table { width: 100%; border-collapse: collapse; background: white; }
+caption { text-align: left; font-size: 14px; color: #42566a; padding-bottom: 6px; }
+th, td { padding: 8px 10px; border: 1px solid #c6d0da; text-align: left; overflow-wrap: anywhere; }
+th { background: #e6edf5; }
+th:last-child, td:last-child { text-align: right; }
+</style>
+</head>
+<body>
+<h1>Inventory Import Review</h1>
+<p class="note">Synthetic local review only; no inventory is imported or saved. Results apply to the last review; review again after editing the input. Use the header <code>item_id|location|quantity</code> and one pipe-separated record per line.</p>
+<label for="source">Inventory rows</label>
+<textarea id="source" spellcheck="false"></textarea>
+<button type="button" id="validateBtn">Review import</button>
+<p id="status" role="status">No review yet.</p>
+<ul id="errors" aria-label="Validation errors"></ul>
+<h2>Preview</h2>
+<table>
+<caption>Rows from the last successful local review</caption>
+<thead><tr><th scope="col">Item ID</th><th scope="col">Location</th><th scope="col">Quantity</th></tr></thead>
+<tbody id="rows"></tbody>
+</table>
+<script>
+const sourceEl = document.getElementById('source');
+const statusEl = document.getElementById('status');
+const errorsEl = document.getElementById('errors');
+const rowsEl = document.getElementById('rows');
+
+function parseSource(text) {
+  const lines = text.replace(/^\uFEFF/, '').split(/\r\n|\n|\r/);
+  const first = lines.findIndex(line => line.trim() !== '');
+  const errors = [], records = [];
+  if (first < 0 || lines[first].split('|').map(s => s.trim()).join('|') !== 'item_id|location|quantity') {
+    return { records, errors: ['Use header: item_id|location|quantity.'] };
+  }
+  lines.slice(first + 1).forEach((line, offset) => {
+    if (!line.trim()) return;
+    const number = first + offset + 2;
+    const fields = line.split('|').map(s => s.trim());
+    if (fields.length !== 3) {
+      errors.push('Line ' + number + ': expected 3 fields.');
+      return;
+    }
+    records.push({ number, id: fields[0], location: fields[1], rawQuantity: fields[2], quantity: Number(fields[2]) });
+  });
+  if (!records.length && !errors.length) errors.push('Enter at least one data row.');
+  return { records, errors };
+}
+
+function validateBatch(records) {
+  const errors= [],seen= new Set();
+  records.forEach(record=>{
+    record.id = record.id.toUpperCase();
+    const prefix = 'Line '+record.number+':';
+    if(!record.id) errors.push(prefix +'Item ID is required.');
+    if(record.id && seen.has(record.id)){
+      errors.push(prefix+'duplicate item id'+ record.id);
+    }
+    if(record.id) seen.add(record.id);
+    if(!record.location) seen.push(prefix+'location is required');
+    if(!/^\d+$/.test(record.rawQuantity) || record.quantity>9999){
+      errors.push(prefix+'quantity must. be an integer from 0 to 9999');
+    }
+  });
+  return errors;
+}
+
+function renderRows(records) {
+  records.forEach(record => {
+    const tr = document.createElement('tr');
+    [record.id, record.location, String(record.quantity)].forEach(value => {
+      const td = document.createElement('td');
+      td.textContent = value;
+      tr.append(td);
+    });
+    rowsEl.append(tr);
+  });
+}
+
+function reviewImport() {
+  rowsEl.replaceChildren();
+  errorsEl.replaceChildren();
+  const parsed = parseSource(sourceEl.value);
+  const errors = [...parsed.errors, ...validateBatch(parsed.records)];
+  if (errors.length) {
+    errors.forEach(message => {
+      const li = document.createElement('li');
+      li.textContent = message;
+      errorsEl.append(li);
+    });
+    statusEl.textContent = 'Rejected: ' + errors.length + ' issue(s). No rows imported.';
+    return;
+  }
+  renderRows(parsed.records);
+  const total = parsed.records.reduce((sum, row) => sum + row.quantity, 0);
+  statusEl.textContent = 'Validated ' + parsed.records.length + ' rows (' + total + ' total units). Local review only; nothing imported.';
+}
+document.getElementById('validateBtn').addEventListener('click', reviewImport);
+</script>
+</body>
+</html>
