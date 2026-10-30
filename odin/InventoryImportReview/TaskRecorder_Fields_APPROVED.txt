@@ -8,7 +8,7 @@ Visual Studio Code
 Firefox
 
 Opening document:
-Before recording, open Goal.docx in Google Docs in Firefox and show only the exact Goal paragraph. Hide private account/profile information. Google Docs is opening-only and is not an extra substantive task app.
+Before recording, open Goal.pdf in Firefox's built-in PDF viewer and show only the exact Goal paragraph. Hide private profile/bookmark information. The PDF is opening-only in Firefox and adds no extra substantive task app.
 
 Recording inputs:
 input 1.html
