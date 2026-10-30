@@ -13,6 +13,8 @@ The current Recording_Script_ColorBlocks_FINAL.md and rendered FINAL.pdf were cr
 - Clarified that VS Code file lines and Firefox batch-error line numbers are different numbering contexts. I03's Markdown copy lines are 52-54; its duplicate error refers to pasted batch line 3.
 - Distinguished raw BOM/line-ending parser checks from textarea behavior, since native textareas can normalize line endings.
 
+- Replaced heading-only pointing cues with exact source lines and quoted phrases. "Point" means hover, without clicking or editing. Format rules are at lines 6-9; business rules at 13-16; batch rules at 20-21.
+
 ## Verified alignment
 
 - Original HTML: 105 physical lines. Requirements Markdown: 140 physical lines.
@@ -21,7 +23,7 @@ The current Recording_Script_ColorBlocks_FINAL.md and rendered FINAL.pdf were cr
 - Replacing only the validation stub, then adding the preview-clearing statement, reproduces the tested 120-line completed page. That completed test file is scratch-only and excluded from recording packages.
 - All twelve acceptance groups' data selections and expected results match the real requirements brief. The valid-invalid-valid group deliberately reuses I01 and I03.
 - Goal.pdf contains one page and the exact approved Goal. TaskRecorder fields contain the same Goal.
-- All 280 nonempty instruction/code lines or paragraphs from the Markdown guide are present in the rendered 23-page PDF after removing only presentation markup and whitespace.
+- All 297 nonempty instruction/code lines or paragraphs from the Markdown guide are present in the rendered 24-page PDF after removing only presentation markup and whitespace.
 - The epilogue contains 394 spoken words; rehearse it aloud to reach the intended clear, natural 3-4 minute reflection without exceeding four minutes.
 
 ## Fresh browser execution

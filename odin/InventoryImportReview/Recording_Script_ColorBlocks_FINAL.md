@@ -55,12 +55,32 @@ CHECK | The complete intro stays under 20 seconds. The visible Goal is exact and
 
 SAY | "In Visual Studio Code's Explorer pane on the far left, beneath the open folder name, I am left-clicking input 2.md, listed below input 1.html. I want the import rules and expected outcomes before changing the page."
 ACTION | Open input 2.md, pause and point to its title, then the format and business-rule headings.
-SAY | "In input 2.md at line 5, below the document title in the format section, each nonblank record has item ID, location and quantity separated by a vertical bar. This is a small plain-text format, not a general CSV parser with quoted fields."
-ACTION | Point to the header item_id|location|quantity, the three-field rule, whitespace handling and physical line-number requirement. If below view, say you are scrolling down within the input 2.md editor to those rules before scrolling.
-SAY | "In input 2.md at line 12, below the format rules, item IDs and locations are required. IDs must be compared after trimming and uppercasing. Quantities use digits only, from zero through 9999. A blank string must not become a valid zero just because Number converts it to zero."
-ACTION | Point individually to required values, duplicate normalization and quantity grammar/range. Keep the brief unchanged.
-SAY | "In input 2.md at line 19, below the quantity rules, any error rejects the whole preview. A later review must clear old rows and errors, so a rejected batch cannot appear alongside an earlier successful preview."
-ACTION | Point to all-or-nothing rejection and valid-invalid-valid recovery. Scroll explicitly to this heading if needed.
+CHECK | In the following steps, "point" means move and briefly hover the mouse pointer over the exact quoted words in the input 2.md source editor. Do not click, select or edit those words. Line 5 is only the Format heading, line 12 is only the Business rules heading and line 19 is only the Batch acceptance heading. The rule text is below each heading. If a target is offscreen, first say which direction you are scrolling in input 2.md and the numbered line you are bringing into view.
+
+SAY | "In input 2.md, I am moving my pointer over 'Use three pipe-separated fields per line' on line 6, directly below the Format heading on line 5. Each record has three values, separated by the vertical-bar symbol."
+ACTION | Hover over `Use three pipe-separated fields per line.` at the start of line 6. Keep the text unchanged.
+SAY | "On line 7 of input 2.md, I am pointing to the header item_id, vertical bar, location, vertical bar, quantity. It names the three fields the page expects."
+ACTION | Move the pointer onto the exact text `item_id|location|quantity` in the Format rules on line 7, after `The first nonblank line must be`. The same example appears later at line 32; use the rule at line 7 for this explanation.
+SAY | "On line 8 of input 2.md, I am pointing to the sentence beginning 'Error line numbers'. Errors count the physical lines of the pasted batch, including blank lines."
+ACTION | Hover over `Error line numbers refer to physical source lines, including blanks.` on line 8. If the sentence wraps onto a second visible row, that row still belongs to gutter line 8.
+SAY | "On line 9 of input 2.md, I am pointing first to 'exactly three fields', then to 'Trim surrounding whitespace'. The parser must check the number of fields and remove spaces around each value."
+ACTION | On line 9, move the pointer over `exactly three fields`, pause briefly, then move it over `Trim surrounding whitespace from every value.` on the same physical line.
+
+SAY | "In input 2.md, I am moving down to line 13, directly below the Business rules heading on line 12. I am pointing to 'Require a nonempty item ID and location'. Both values must be provided."
+ACTION | Hover over `Require a nonempty item ID and location.` at the start of line 13. Do not point only at the heading on line 12.
+SAY | "Still on line 13 of input 2.md, I am moving my pointer to 'Normalize item IDs to uppercase'. I will normalize an ID before comparing it or showing it in the preview."
+ACTION | Move the pointer farther right on line 13 to `Normalize item IDs to uppercase before comparing and previewing them.`
+SAY | "On line 14 of input 2.md, I am pointing to 'Duplicate normalized IDs reject the whole batch'. IDs that become the same after normalization must not be accepted together."
+ACTION | Hover over `Duplicate normalized IDs reject the whole batch` at the start of line 14, immediately below the required-field and normalization rules.
+SAY | "On line 15 of input 2.md, I am pointing first to 'ASCII digits only', then to '0 through 9999 inclusive'. This defines both the allowed quantity characters and the numeric range."
+ACTION | On line 15, point to `ASCII digits only`, then move the pointer to `0 through 9999 inclusive` near the end of the same source line.
+SAY | "On line 16 of input 2.md, I am pointing to the invalid quantity examples, beginning with 'Blank, negative, fractional'. I am then moving to 'Zero and leading zeros are valid'. A blank is invalid even though Number could convert it to zero; an actual digit zero is allowed."
+ACTION | Hover over `Blank, negative, fractional, exponent, nonnumeric and over-limit quantities are invalid.` on line 16. Then move to `Zero and leading zeros are valid; display the parsed number.` on that same physical line, even if it wraps visually. Keep the brief unchanged.
+
+SAY | "In input 2.md, I am pointing to line 20, directly below the Batch acceptance and preview heading on line 19. 'Reject the entire batch and show no preview rows' means one error must prevent a successful-looking preview."
+ACTION | Hover over `reject the entire batch and show no preview rows` on line 20, after `If any parse or business error exists`.
+SAY | "On line 21 of input 2.md, I am pointing to 'Clear old preview rows and old errors before each new review'. I will check that a failed review removes an earlier preview and that a correction works again."
+ACTION | Hover over the first sentence on line 21, then point to `Corrected input must work without accumulating rows or retaining old errors.` on the same source line.
 SAY | "I am scrolling down in the input 2.md editor to the acceptance section beginning with I01 at line 29 and ending with I12 at line 133. These groups cover normal input, zero and leading zeros, duplicates, missing fields, invalid quantities, structural errors, safe text, recovery and bounds. I will compare the displayed rows, totals and error lines with these expectations."
 ACTION | Scroll to the acceptance groups, point to each group heading, and locate I09's literal <b>Store</b> value and I10's three-review sequence. Do not claim a result yet.
 
