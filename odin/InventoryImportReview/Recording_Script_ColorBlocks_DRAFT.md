@@ -1,6 +1,6 @@
 # Inventory Import Review - detailed recording guide (DRAFT)
 
-Not Studio approved. This is a provisional plan, not a record of completed work. Use it only after the idea is approved, the actual permitted inputs are supplied, and this guide is reconciled with those files. Proposed control/function names are explicit. Every code step below has a mandatory line-number field; the actual files must supply those numbers before recording. Keep this guide and all project materials off the recorded screen.
+The user has confirmed idea approval. This recording guide remains provisional because the actual input files have not yet been supplied. Use it only after the approved text is checked, the actual permitted inputs are available, and this guide is reconciled with those files. Proposed control/function names are explicit. Every code step below has a mandatory line-number field; the actual files must supply those numbers before recording. Keep this guide and all project materials off the recorded screen.
 
 The SAY text is a cue for natural synchronized speech, not a requirement to recite mechanically. Every meaningful click, selection, scroll, edit, menu choice and app switch must name its app, exact target, purpose and observed result. If you need an extra action, narrate that actual action too. Never say a test passed because this guide predicts it. The expected checks below must be observed.
 
@@ -29,7 +29,7 @@ IF WRONG | Conditional error-narration pattern, not a factual claim: "In [actual
 
 ## 0. Readiness and setup - OFF SCREEN
 
-CHECK | Idea approval is required first. Use the same Studio task after approval. If the reviewer changes the Goal, app list, scope or materials, synchronize the proposal, opening document, TaskRecorder and guide before recording.
+CHECK | The user confirmed idea approval. Confirm the Goal and apps match the actual Studio approval and continue in that same task. If the reviewer changes the Goal, app list, scope or materials, synchronize the proposal, opening document, TaskRecorder and guide before recording.
 CHECK | Actual input 1.html and input 2.md were prepared through the permitted process and checked. The starter has parseSource, renderRows and reviewImport scaffolding; validateBatch returns an empty array; the review handler omits clearing rows. The source text, IDs and messages match this guide. No completed output exists in the recording folder.
 ACTION | Use a fresh neutral folder such as /Users/Shared/StockReview_Record containing only the two actual inputs. Rehearse in a separate disposable folder; do not move a completed rehearsal output into the fresh recording folder. Keep both original inputs unchanged.
 ACTION | Prepare a Google Docs document in Firefox containing only the exact approved Goal, with no heading, approval ID, project instructions, or additional proposal text. Use the allowed account setup and hide personal account names/photos. Keep only this opening document behind TaskRecorder. Do not use Notes or TextEdit for the opening.

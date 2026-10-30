@@ -6,9 +6,9 @@ Shared working folder for Odin tasks in the Dice repository.
 - [Narration standard](Narration_Standard.md): precise line numbers and control locations required in recording guides.
 - `met.rtf`: Facility Opening Checklist metadata in Rich Text Format.
 - `met.txt`: the same metadata as plain text for easy reading on GitHub.
-- [InventoryImportReview](InventoryImportReview/README_FIRST.md): new task
-  proposal, input-preparation brief, acceptance matrix and detailed draft
-  recording guide. Submit the idea first; this task is not yet approved.
+- [InventoryImportReview](InventoryImportReview/README_FIRST.md): idea approved
+  per user confirmation. Approved Goal and recorder fields are prepared;
+  actual recording inputs and the final numbered guide remain pending.
 
 The metadata uses the revised approved Facility Opening Checklist Goal. Its
 Topology follows the supplied recording guide; confirm it matches the actual
