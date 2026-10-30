@@ -2,6 +2,12 @@
 
 User requirement: every instruction should be clear to a first-time listener. Use precise locations throughout all future guides.
 
+## Current task-planning preference
+
+Prepare manageable tasks for about 20-25 minutes including the required closing reflection. Prefer a small number of stable, single-line code edits and a short complete test matrix. Verify timing by rehearsal; do not extend the script with repetitive pointing or shorten it by skipping required checks.
+
+Every SAY block contains only complete literal sentences the user can read aloud unchanged. Put actions, checks, conditions, alternative-path selection and troubleshooting directions outside SAY. Include no placeholders or instructions to improvise inside SAY. Gate any success statement with an external CHECK; the speaker must not read it after a failed result. A broad requirements overview can be natural prose, while code edits still require the exact current file and line.
+
 ## Code
 
 Each coding instruction names the application, exact filename, actual current physical line number, neighboring code/function, exact action and purpose. Use source gutter numbers from the real files. Do not guess numbers from a generated reference or carry starter numbers into edited output. Recalculate after inserted/deleted lines or formatting changes. Point to the actual target as it is named. Before deleting a comment or TODO, identify its current line and exact text; name each deletion or an explicit contiguous range. Explain which adjacent executable statements must remain.

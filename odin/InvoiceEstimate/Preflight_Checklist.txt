@@ -1,0 +1,14 @@
+OFFSCREEN PREFLIGHT - INVOICE ESTIMATE
+
+1. Submit Studio_Proposal.txt and receive idea approval before recording. Match the actual approved Goal and apps. If Studio changes them, synchronize the files and script first.
+2. Read SOURCE_PROVENANCE.txt off screen. The inputs were prepared in Codex and must not be labeled as Gemini-generated or self-authored. Keep source statements accurate.
+3. Rehearse on a disposable copy. The script plans a natural 20-25 minute take, around 22:45 including reflection; only a rehearsal establishes your actual timing. Complete all E01-E06 groups. Do not cut tests, rush speech or add filler to hit a number.
+4. Use a fresh /Users/Shared/Estimate_Record folder with only Goal.pdf, input 1.html and input 2.md. During the recording, create final output 1.html with Save As. Keep both inputs unchanged.
+5. In VS Code, show Explorer, absolute source line numbers and word wrap. Open Markdown as source, not rendered preview. Turn format-on-save/type and automatic bracket/quote closing off. The three single-line edits are on lines 54, 55 and 56; do not insert or delete physical lines.
+6. Prepare Firefox, open Goal.pdf in its built-in PDF viewer, use readable zoom and keep only the exact Goal visible behind TaskRecorder. Check local HTML opening and number-field selection on the Mac before the real take. Keep menu bar and side Dock visible; use ordinary windows rather than full-screen Split View.
+7. Use a quiet room and a clear microphone; listen to a short sample at normal playback speed. Close room windows where practical, reduce traffic/voice/fan noise and use a headset mic if available.
+8. Hide bookmarks, unrelated tabs, private accounts/autofill and project material. Quit/unpin unused Dock apps; keep required recorder/accessibility apps and background/security services running. Keep the guide, Studio, GitHub and AI tools off screen.
+9. Set up TaskRecorder permissions, correct screen, microphone, exact approved Goal and genuine app list. Keep Accessibility Inspector running with its window closed. Confirm power/storage, required resolution, clock seconds, default cursor and one permitted appearance change.
+10. Read only SAY aloud, exactly as written. ACTION/EDIT/CHECK are silent instructions. A result SAY is read only after its CHECK matches. Optional error SAY blocks apply only to the corresponding observed problem. Never recite a success that did not occur.
+11. Keep normal coding typing within 30% of the take, and continuous typing/mouse inactivity below 45 seconds outside the closing reflection. The main implementation is three short line replacements.
+12. Rehearse the 370-word epilogue clearly at a natural pace, targeting 3-4 minutes and never over four. Do not invent a mistake or skip the reflection. Preserve the original continuous recording and exact recorded output afterward.

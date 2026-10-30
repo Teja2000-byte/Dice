@@ -1,0 +1,13 @@
+Domain / Role: Front-end developer repairing a local financial estimate.
+
+Goal: Repair a synthetic offline invoice-estimate calculator so discounts, tax and the final total follow a written currency policy. In Visual Studio Code, preserve the starter and requirements brief, save a separate HTML output, apply the discount before tax, round tax to the nearest cent and calculate the total from the discounted amount plus tax. In Firefox, compare two incorrect baseline results with the repaired page, then complete six acceptance groups covering ordinary amounts, half-cent rounding, a full discount, zero rates and native field validation. Deliver one standalone local HTML file; no invoice is issued and no payment or record is created.
+
+Starting materials: Two synthetic local files prepared before recording. input 1.html is a standalone HTML calculator with three labeled numeric fields, native form validation, a result table and inline JavaScript. The calculation uses the wrong tax base, rounds tax down and adds the discount in the total. input 2.md defines the currency policy and six acceptance groups. Both inputs are preserved unchanged; the completed file is created during recording. There are no external assets, private data, network or storage calls.
+
+Steps (with apps for each):
+1. In Visual Studio Code, read the policy and starter, identify the calculation decisions and Save As final output 1.html.
+2. In Firefox, show the ordinary-discount and half-cent baseline errors.
+3. In Visual Studio Code, repair the taxable base, nearest-cent tax rounding and final total while retaining native form validation and existing presentation.
+4. In Firefox, complete all six acceptance groups, comparing the four monetary results and checking the three native validation prompts. Return to Visual Studio Code to confirm the saved file.
+
+Deliverable: final output 1.html, one standalone invoice-estimate calculator with policy-correct discount/tax order, nearest-cent tax and a reconciled total. Both starting files remain unchanged. The work produces an estimate only, without a real invoice, payment or stored record.

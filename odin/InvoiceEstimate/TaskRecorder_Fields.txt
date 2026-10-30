@@ -1,0 +1,10 @@
+PROPOSED TASK - wait for Studio idea approval. Use these only if the Goal and apps are approved unchanged.
+
+Task Description - copy only this paragraph:
+Repair a synthetic offline invoice-estimate calculator so discounts, tax and the final total follow a written currency policy. In Visual Studio Code, preserve the starter and requirements brief, save a separate HTML output, apply the discount before tax, round tax to the nearest cent and calculate the total from the discounted amount plus tax. In Firefox, compare two incorrect baseline results with the repaired page, then complete six acceptance groups covering ordinary amounts, half-cent rounding, a full discount, zero rates and native field validation. Deliver one standalone local HTML file; no invoice is issued and no payment or record is created.
+
+Used Apps:
+Visual Studio Code
+Firefox
+
+Open Goal.pdf in Firefox as the Goal-only opening document. Keep this fields file and all guides off screen.
